@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import App from './src/App';
-import { UserProvider } from './src/context/UserProvider.js';
-import { ParksCampsProvider } from './src/context/ParksCampsProvider.js';
+import App from './App';
+import { UserProvider } from './context/UserProvider.js';
+import { ParksCampsProvider } from './context/ParksCampsProvider.js';
 
 ReactDOM.render(
   <BrowserRouter>

@@ -4,12 +4,14 @@ require("dotenv").config()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const expressjwt = require("express-jwt")
+const path = require("path")
 
-process.env.SECRET
+const port = process.env.PORT || 8000;
+const secret = process.env.SECRET || "cat tree eagle bear"
 
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 mongoose.connect(
   'mongodb://localhost:27017/trailguide',
@@ -24,15 +26,19 @@ mongoose.connect(
 
 
 app.use('/auth', require('./routes/authRouter.js'))
-app.use('/api', expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}))
+app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] }))
 app.use('/api/mytravel', require('./routes/myTravelRouter.js'))
 app.use("/api/users", require("./routes/usersRouter.js"))
 
 app.use((err, req, res, next) => {
   console.log(err)
-  return res.send({errMsg: err.message})
+  return res.send({ errMsg: err.message })
 })
 
-app.listen(9002, () => {
-  console.log(`Server is running on local port 9001`)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on local port 8000`)
 })
