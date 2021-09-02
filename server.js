@@ -9,6 +9,7 @@ process.env.SECRET
 
 app.use(express.json())
 app.use(morgan('dev'))
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 mongoose.connect(
   'mongodb://localhost:27017/trailguide',
@@ -20,6 +21,7 @@ mongoose.connect(
   },
   () => console.log('Connected to the DB')
 )
+
 
 app.use('/auth', require('./routes/authRouter.js'))
 app.use('/api', expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}))
