@@ -3,6 +3,8 @@ const authRouter = express.Router()
 const User = require("../models/User.js")
 const jwt = require('jsonwebtoken')
 
+const secret = process.env.SECRET || "cat tree eagle bear"
+
 //signup 
 authRouter.post('/signup', (req, res, next) => {
     User.findOne({ username: req.body.username.toLowerCase()}, (err, user) => {

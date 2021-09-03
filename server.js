@@ -7,7 +7,7 @@ const expressjwt = require("express-jwt")
 const path = require("path")
 
 const port = process.env.PORT || 8000;
-const secret = process.env.SECRET || "cat tree eagle bear"
+process.env.SECRET 
 
 app.use(express.json())
 app.use(morgan('dev'))
