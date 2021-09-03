@@ -7,7 +7,7 @@ const expressjwt = require("express-jwt")
 const path = require("path")
 
 const port = process.env.PORT || 8000;
-process.env.SECRET 
+const secret = process.env.SECRET || "plants space fang twizzler"
 
 app.use(express.json())
 app.use(morgan('dev'))
@@ -26,7 +26,7 @@ mongoose.connect(
 
 
 app.use('/auth', require('./routes/authRouter.js'))
-app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] }))
+app.use('/api', expressjwt({ secret: secret, algorithms: ['HS256'] }))
 app.use('/api/mytravel', require('./routes/myTravelRouter.js'))
 app.use("/api/users", require("./routes/usersRouter.js"))
 
