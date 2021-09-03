@@ -56,7 +56,7 @@ export default function Parks(props) {
     return (
         <div className="parks">
             {park.data != undefined ?
-                <>
+                <div>
                     <h2 className="parksName">{park.data[0].fullName}</h2>
                     <p className="parksDescription">{park.data[0].description}</p>
                     <img className="parksImg" src={park.data[0].images[0].url} />
@@ -66,7 +66,7 @@ export default function Parks(props) {
                     <p className="address">{park.data[0].addresses[0].city} {park.data[0].addresses[0].stateCode} {park.data[0].addresses[0].postalCode}</p>
                     {/* <a href={park.data[0].url} className="url">{park.data[0].url}</a> */}
                     <button onClick={(e) => (window.location = `${park.data[0].url}`)} className="urlBtn">{park.data[0].url}</button>
-                    <button onClick={handleParkSave}>Save Location</button></>
+                    <button onClick={handleParkSave}>Save Location</button></div>
                 : <p>No Data</p>
             }
         </div>
