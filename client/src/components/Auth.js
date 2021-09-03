@@ -30,7 +30,7 @@ export default function Auth() {
     return (
         <div className="auth-container">
             {!toggle ?
-                <>
+                <div>
                 <h1>Ultimate Parks Guide</h1>
                     <AuthForm
                         handleChange={handleChange}
@@ -40,9 +40,9 @@ export default function Auth() {
                         errMsg={errMsg}
                     />
                     <p onClick={() => setToggle(prev => !prev)}>Already a member?</p>
-                </>
+                </div>
                 :
-                <>
+                <div>
                 <h1>Ultimate Parks Guide</h1>
                     <AuthForm
                         handleChange={handleChange}
@@ -52,7 +52,7 @@ export default function Auth() {
                         errMsg={errMsg}
                     />
                     <p onClick={() => setToggle(prev => !prev)}>Not a member?</p>
-                </>
+                </div>
             }
 
         </div>
