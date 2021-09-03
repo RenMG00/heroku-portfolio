@@ -1,8 +1,15 @@
 {
-  "name": "server",
+  "name": "parksguide",
   "version": "1.0.0",
+  "description": "",
   "main": "server.js",
-  "license": "MIT",
+  "scripts": {
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
@@ -11,14 +18,7 @@
     "mongo": "^0.1.0",
     "mongodb": "^3.6.8",
     "mongoose": "^5.13.2",
-    "morgan": "^1.10.0",
-    "path": "^0.12.7",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3"
-  },
-  "scripts": {
-    "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "morgan": "^1.10.0"
   },
   "engines": {
     "node": "14.15.1"
