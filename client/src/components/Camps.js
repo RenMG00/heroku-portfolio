@@ -34,12 +34,6 @@ export default function Campgrounds(props) {
         <div className="camps">
          <h2>Name: {campground.name}</h2>
             <p>Description: {campground.description}</p>
-            {/* {props.images[0] != undefined ?
-                <img src={props.images[0].url}/>
-                :
-                <p>No Image available</p>
-            } */}
-            {/* <p>Location: {props.addresses}</p> */}
             <button onClick={handleCampSave}>Save Location</button>
         </div>
     )

@@ -24,14 +24,6 @@ export default function Home(props) {
             .catch(err => console.log(`Error: ${err}`))
     }, [])
 
-    console.log(content.data)
-    //Get current parks
-    // if (!loading) {
-    //     const indexOfLastPark = currentPage * parksPerPage;
-    //     const indexofFirstPark = indexOfLastPark - parksPerPage
-    //     const currentPark = content.data.slice(indexofFirstPark, indexOfLastPark)
-    // }
-
     const handleChange = (e) => {
         const { value } = e.target
         setSearch(value)
@@ -49,7 +41,7 @@ export default function Home(props) {
 
     const BarStyling = { width: "30rem", background: "#F2F1F9", border: "none", padding: "0.5rem" };
     return (
-        <>
+        <div>
             <div className="home">
                 <h3 className="welcome">Welcome {username}</h3>
                 <div className="parkSearchBar">
@@ -77,6 +69,6 @@ export default function Home(props) {
                 </div>
                 {/* <Pagination parksPerPage={parksPerPage} totalParks={content.legnth} paginate={paginate} /> */}
             </div>
-        </>
+        </div>
     )
 }
