@@ -6,9 +6,9 @@ const mongoose = require('mongoose')
 const expressjwt = require("express-jwt")
 const path = require("path")
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 9000;
 const secret = process.env.SECRET || "plants space fang twizzler"
-const uri = process.env.MONGODB_URI || 'mongodb://localhost/8000/trail-guide'
+const uri = process.env.MONGODB_URI || 'mongodb://localhost/9000/trailguide'
 
 app.use(express.json())
 app.use(morgan('dev'))
@@ -40,5 +40,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on local port 8000`)
+  console.log(`Server is running on local port 9000`)
 })
