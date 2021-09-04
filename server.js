@@ -8,7 +8,7 @@ const path = require("path")
 
 const port = process.env.PORT || 9000;
 const secret = process.env.SECRET || "plants space fang twizzler"
-const uri = process.env.MONGODB_URI || 'mongodb://localhost/9000/trailguide'
+const uri = process.env.MONGODB_URI || 'mongodb://localhost/9000/trails-guide'
 
 app.use(express.json())
 app.use(morgan('dev'))
