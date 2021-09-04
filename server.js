@@ -8,13 +8,14 @@ const path = require("path")
 
 const port = process.env.PORT || 8000;
 const secret = process.env.SECRET || "plants space fang twizzler"
+const uri = process.env.MONGODB_URI || 'mongodb://localhost/8000/trail-guide'
 
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 mongoose.connect(
-  mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/trail-guide',
+  mongoose.connect(uri,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
