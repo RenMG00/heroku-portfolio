@@ -14,12 +14,12 @@ app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 mongoose.connect(
-  mongoose.connect(process.env.MONGODB_URI,
+  mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/trail-guide',
     {
       useNewUrlParser: true,
-      // useUnifiedTopology: true,
-      // useCreateIndex: true,
-      // useFindAndModify: false
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
     }
   )
 )
