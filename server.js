@@ -14,16 +14,15 @@ app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 mongoose.connect(
-  mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/trail-guide',
+  mongoose.connect(process.env.MONGODB_URI,
     {
       useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false
-    },
-    () => console.log('Connected to the DB')
+      // useUnifiedTopology: true,
+      // useCreateIndex: true,
+      // useFindAndModify: false
+    }
   )
-
+)
 
 app.use('/auth', require('./routes/authRouter.js'))
 app.use('/api', expressjwt({ secret: secret, algorithms: ['HS256'] }))
@@ -31,13 +30,13 @@ app.use('/api/mytravel', require('./routes/myTravelRouter.js'))
 app.use("/api/users", require("./routes/usersRouter.js"))
 
 app.use((err, req, res, next) => {
-    console.log(err)
-    return res.send({ errMsg: err.message })
-  })
+  console.log(err)
+  return res.send({ errMsg: err.message })
+})
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-  });
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 app.listen(port, () => {
   console.log(`Server is running on local port 8000`)
