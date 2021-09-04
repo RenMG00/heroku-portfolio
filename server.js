@@ -14,7 +14,7 @@ app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 mongoose.connect(
-  mongoose.connect(MONGODB_URI || 'mongodb://localhost/trail-guide',
+  mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/trail-guide',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
