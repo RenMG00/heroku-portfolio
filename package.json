@@ -2,7 +2,7 @@
   "name": "heroku-portfolio",
   "version": "1.0.0",
   "description": "Portfolio Deploy",
-  "main": "server.js",
+  "main": "index.js",
   "license": "ISC",
   "Dependencies": {
     "bcrypt": "^5.0.1",
