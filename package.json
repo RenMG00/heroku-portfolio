@@ -3,26 +3,8 @@
   "version": "1.0.0",
   "description": "Portfolio Deploy",
   "main": "server.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
-    "start": "node server.js"
-  },
-  "engines": {
-    "node": "14.15.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RenMG00/heroku-portfolio.git"
-  },
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RenMG00/heroku-portfolio/issues"
-  },
-  "homepage": "https://github.com/RenMG00/heroku-portfolio#readme",
-  "dependencies": {
+  "Dependencies": {
     "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -31,5 +13,13 @@
     "morgan": "^1.10.0",
     "path": "^0.12.7",
     "react-router-dom": "^5.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "14.15.1"
   }
 }
