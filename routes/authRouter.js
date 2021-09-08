@@ -3,7 +3,7 @@ const authRouter = express.Router()
 const User = require("../models/User.js")
 const jwt = require('jsonwebtoken')
 
-const secret = process.env.SECRET || "cat tree eagle bear"
+const secret = process.env.SECRET || "plants space fang twizzler"
 
 //signup 
 authRouter.post('/signup', (req, res, next) => {
