@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, "client", "build")))
 
   mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/trails-guide",
     {
-      useNewUrlParser: true,
+     // useNewUrlParser: true,
       useUnifiedTopology: true,
       // useCreateIndex: true,
       // useFindAndModify: false
